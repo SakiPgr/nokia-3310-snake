@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentIndex = 0; // so first div in our grid
   let appleIndex = 0; // so first div in our grid
   let currentSnake = [2, 1, 0]; // so the div in our grid being 2 (or the HEAD) and 0 being the end (Tail, with all 1's being the body from now on)
-  let = direction = 1;
+  let direction = 1;
   let score = 0;
   let speed = 0.9;
   let intervalTime = 0;
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // to start, and restart the game
   function startGame() {
     currentSnake.forEach(index => squares[index].classList.remove('snake'));
-    squares[appleIndex].classList.remove('aplle');
+    squares[appleIndex].classList.remove('apple');
     clearInterval(interval);
     score = 0;
     // randomApple()
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       (currentSnake[0] - width < 0 && direction === width) || // if snake hits top
       squares[currentSnake[0] + direction].classList.contains('snake') // if snake goes into itself
       ) {
-        return clearInterval(interval) // tjos wo;; c;ear tjje omterval if any of the above conditions happen.
+        return clearInterval(interval) // this will clear the interval if any of the above conditions happen.
       }
 
       const tail = currentSnake.pop(); // removes last bite of the array and shows it
