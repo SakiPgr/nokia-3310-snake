@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const squares = document.querySelectorAll('.grid div')
   const scoreDisplay = document.querySelector('span')
   const startBtn = document.querySelector('.start')
+  const square = document.querySelector('.grid')
 
   const width = 10
   const speed = 0.9
@@ -12,6 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
   let score = 0
   let intervalTime = 0
   let interval = 0
+
+  function addDivs () {
+    for (let i = 0; i < 100; i++) {
+      const div = document.createElement('div')
+      square.appendChild(div)
+    }
+  }
 
   // to start, and restart the game
   function startGame () {
@@ -83,6 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
       direction = +width // if we press the down arrow, the snake will  go forward ten divs, appearing to go down
     }
   }
+
+  addDivs()
 
   document.addEventListener('keyup', control)
 
